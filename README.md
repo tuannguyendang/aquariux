@@ -36,4 +36,20 @@ Database.
    - GET /v1/trade/wallet/{userId}
 4. Retrieve Trade History
    - GET /v1/trade/history/{userId}
-### Running and Testing
+
+### Testing
+- Run unit test
+![runtest1.png](runtest1.png)
+
+#### API Manual testing:
+- by postman:\
+import file [Interview.postman_collection.json](Interview.postman_collection.json) to your postman
+- by CURL:
+  - API Best Aggregated Prices:\
+    ``` curl --location 'http://localhost:8080/v1/trade/aggregation-prices/latest' ```
+  - API Trade Based on Latest Best Aggregated Price:\
+    ``` curl --location 'http://localhost:8080/v1/trade/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff' \--header 'Content-Type: application/json' \--data '{"tradingPair": "ETHUSDT", "orderType": "","quantity": 11.09 }' ```
+  - API Retrieve Wallet Balance:\
+    ``` curl --location 'http://localhost:8080/v1/trade/wallet/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff' ```
+  - API Trade history:\
+    ``` curl --location 'http://localhost:8080/v1/trade/history/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff' ```

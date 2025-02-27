@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "e7d4baf4-4139-4bc4-90d3-adb89c4bdfe2",
+		"name": "Interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29946372",
+		"_collection_link": "https://cloudy-escape-313001.postman.co/workspace/My-Workspace~de54dd89-58a9-4355-8d21-aa2207836ba4/collection/29946372-e7d4baf4-4139-4bc4-90d3-adb89c4bdfe2?action=share&source=collection_link&creator=29946372"
+	},
+	"item": [
+		{
+			"name": "best aggregated prices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trade/aggregation-prices/latest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trade",
+						"aggregation-prices",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trade Based on Latest Best Aggregated Price",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tradingPair\": \"BTCUSDT\",\n    \"orderType\": \"BUY\",\n    \"quantity\": 0.09\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/trade/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trade",
+						"ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Wallet Balance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trade/wallet/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trade",
+						"wallet",
+						"ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trade history",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trade/history/ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trade",
+						"history",
+						"ac864ed4-bd3d-4ca0-8ba2-b49ec74465ff"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
