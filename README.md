@@ -20,12 +20,12 @@ Database.
   * use Event Sourcing to build feature view transaction history in wallet  
 
 ### High Level Design
-![trade_system_high_level_design.png](trade_system_high_level_design.png)
+![trade_system_high_level_design.png](document/trade_system_high_level_design.png)
 * In scope of this project we will: Design and implement trade service only. So in this service we need store user wallet information for funds check, sale/buy... 
 * Other microservices will do in enhancement.
 
 ### Data Model
-![trade_system_date_model.drawio.png](trade_system_date_model.drawio.png)
+![trade_system_date_model.drawio.png](document/trade_system_date_model.drawio.png)
 
 ### API Design
 1. Retrieve Latest Best Aggregated Price : 
@@ -39,11 +39,14 @@ Database.
 
 ### Testing
 - Run unit test
-![runtest1.png](runtest1.png)
+![runtest1.png](document/runtest1.png)
 
 #### API Manual testing:
+- validate data:\
+  - http://localhost:8080/h2-console/login.do
+  ![dbconfig.png](document/dbconfig.png)
 - by postman:\
-import file [Interview.postman_collection.json](Interview.postman_collection.json) to your postman
+import file [Interview.postman_collection.json](document/Interview.postman_collection.json) to your postman
 - by CURL:
   - API Best Aggregated Prices:\
     ``` curl --location 'http://localhost:8080/v1/trade/aggregation-prices/latest' ```
