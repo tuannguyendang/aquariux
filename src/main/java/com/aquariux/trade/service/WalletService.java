@@ -9,7 +9,6 @@ import com.aquariux.trade.model.enums.Currency;
 import com.aquariux.trade.model.response.WalletResponseDTO;
 import com.aquariux.trade.repository.UserWalletRepository;
 import jakarta.transaction.Transactional;
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +24,7 @@ public class WalletService {
 
   /**
    * Method get wallet balance by userId
-   * @param userId
+   * @param userId current userId
    * @return WalletResponseDTO
    */
   @Transactional
@@ -44,7 +43,7 @@ public class WalletService {
               .filter(w -> w.getCurrency() == currency)
               .findFirst()
               .orElse(UserWalletEntity.builder().userId(userId).balance(TRADE_FORMAT_AMOUNT_ZERO).build());
-          return new BalanceDTO(currency.toString(), wallet.getBalance());
+          return new BalanceDTO(currency, wallet.getBalance());
         })
         .collect(Collectors.toList());
 
