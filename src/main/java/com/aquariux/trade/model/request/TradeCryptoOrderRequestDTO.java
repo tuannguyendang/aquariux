@@ -1,5 +1,6 @@
 package com.aquariux.trade.model.request;
 
+import com.aquariux.trade.model.enums.OrderType;
 import com.aquariux.trade.model.enums.TradingPair;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,6 @@ import lombok.NoArgsConstructor;
 public class TradeCryptoOrderRequestDTO {
 
   private TradingPair tradingPair;
-  private String orderType;
+  private OrderType orderType;
   private BigDecimal quantity;
 }

@@ -37,7 +37,7 @@ public class TradeService {
   /**
    * Method execute trade order
    *
-   * @param userId current userId
+   * @param userId                     current userId
    * @param tradeCryptoOrderRequestDTO request body
    * @return result of order
    */
@@ -45,7 +45,7 @@ public class TradeService {
   public TradeOrderResponseDTO executeTradeCryptoOrder(String userId,
       TradeCryptoOrderRequestDTO tradeCryptoOrderRequestDTO) {
     TradingPair tradingPair = tradeCryptoOrderRequestDTO.getTradingPair();
-    OrderType orderType = OrderType.fromString(tradeCryptoOrderRequestDTO.getOrderType());
+    OrderType orderType = tradeCryptoOrderRequestDTO.getOrderType();
     BigDecimal quantity = tradeCryptoOrderRequestDTO.getQuantity();
 
     if (quantity.compareTo(TRADE_FORMAT_AMOUNT_ZERO) <= 0) {

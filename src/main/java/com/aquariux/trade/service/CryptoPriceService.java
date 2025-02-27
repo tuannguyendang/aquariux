@@ -39,6 +39,9 @@ public class CryptoPriceService {
   private final AppConfig appConfig;
   private static final List<TradingPair> SUPPORTED_PAIRS = Arrays.asList(TradingPair.values());
 
+  /**
+   * Scheduler get aggregated prices
+   */
   @Scheduled(fixedRate = 10000)
   public void fetchAndAggregatePrices() {
     Map<TradingPair, BigDecimal> bestBidPrices = new HashMap<>();
@@ -130,11 +133,11 @@ public class CryptoPriceService {
                 tradingPair)
             .stream()
             .max(Comparator.comparing(CryptoPriceEntity::getTimestamp))
-            .map(p -> new BestAggregatedPriceResponseDTO(p.getTradingPair().toString(),
+            .map(p -> new BestAggregatedPriceResponseDTO(p.getTradingPair(),
                 p.getBidPrice(),
                 p.getAskPrice()))
             .orElse(
-                new BestAggregatedPriceResponseDTO(tradingPair.toString(), TRADE_FORMAT_AMOUNT_ZERO,
+                new BestAggregatedPriceResponseDTO(tradingPair, TRADE_FORMAT_AMOUNT_ZERO,
                     TRADE_FORMAT_AMOUNT_ZERO)))
         .collect(Collectors.toList());
   }
