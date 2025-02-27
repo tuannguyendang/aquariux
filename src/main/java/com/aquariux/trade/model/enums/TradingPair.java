@@ -1,10 +1,12 @@
-package com.aquariux.trade.model;
+package com.aquariux.trade.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.extern.log4j.Log4j2;
 
 @Getter
 @AllArgsConstructor
+@Log4j2
 public enum TradingPair {
   ETHUSDT("ETH", "USDT"),
   BTCUSDT("BTC", "USDT");
@@ -16,6 +18,7 @@ public enum TradingPair {
     try {
       return valueOf(value.toUpperCase());
     } catch (IllegalArgumentException e) {
+      log.error("Invalid trading pair: {}", value);
       throw new IllegalArgumentException("Invalid trading pair: " + value);
     }
   }

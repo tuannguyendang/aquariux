@@ -1,4 +1,4 @@
-package com.aquariux.trade.model;
+package com.aquariux.trade.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,14 +11,6 @@ public enum ProvideSource {
   AGGREGATED("Aggregated");
 
   private final String displayName;
-
-  public static ProvideSource fromString(String value) {
-    try {
-      return valueOf(value.toUpperCase());
-    } catch (IllegalArgumentException e) {
-      throw new IllegalArgumentException("Invalid source: " + value);
-    }
-  }
 
   @Override
   public String toString() {

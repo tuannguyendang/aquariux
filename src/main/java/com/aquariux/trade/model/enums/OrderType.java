@@ -1,4 +1,4 @@
-package com.aquariux.trade.model;
+package com.aquariux.trade.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

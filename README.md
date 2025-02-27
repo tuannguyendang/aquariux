@@ -29,7 +29,7 @@ Database.
 
 ### API Design
 1. Retrieve Latest Best Aggregated Price : 
-   - GET /v1/trade/crypto-prices/latest
+   - GET /v1/trade/aggregation-prices/latest
 2. Trade Based on Latest Best Aggregated Price
    - POST /v1/trade
 3. Retrieve Wallet Balance
