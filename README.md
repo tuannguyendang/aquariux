@@ -15,9 +15,10 @@ Database.
 * Fault tolerance: fault tolerance and fast recovery
 * Latency: round-trip should be in the millisecond
 * Security: KYC (Know your client) check to verify user before new account opened, prevent DDos
-* Performance: (It is enhancement feature)
-  * use memory database like Redis (cluster) for handle millions of request for wallet service.
-  * use Event Sourcing to build feature view transaction history in wallet  
+* Performance: (It is enhancement feature for real system)
+    * Use memory database like Redis (cluster) for handle millions of request for wallet service.
+    * use Event Sourcing to build feature balance management in wallet
+    * Cache aggregated price in Redis to reduce hit database
 
 ### High Level Design
 ![trade_system_high_level_design.png](document/trade_system_high_level_design.png)
